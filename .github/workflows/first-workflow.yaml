@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - "main"
+  pull_request:
+    branches:
+      - "feature"
+    types: [openes, closed]
 jobs:
   first-workflow-job:
     name: first job
@@ -14,7 +18,7 @@ jobs:
 
       - name: checkout step
         uses: actions/checkout@v6
-        
+
       - name: after checkout actions
         run: ls
         shell: bash
